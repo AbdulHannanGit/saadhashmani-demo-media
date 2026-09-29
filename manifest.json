@@ -247,7 +247,15 @@
     "podcast.episodes.19.img": "pod-19-img",
     "podcast.episodes.19.thumb": "pod-19-thumb",
     "podcast.episodes.20.img": "pod-20-img",
-    "podcast.episodes.20.thumb": "pod-20-thumb"
+    "podcast.episodes.20.thumb": "pod-20-thumb",
+
+    "collage.images.0": "collage-1",
+    "collage.images.1": "collage-2",
+    "collage.images.2": "collage-3",
+    "collage.images.3": "collage-4",
+    "collage.images.4": "collage-5",
+    "collage.images.5": "collage-6",
+    "collage.images.6": "collage-7"
   },
   "source_map": {
     "logo": "Saad Hashmani Logo.webp",
