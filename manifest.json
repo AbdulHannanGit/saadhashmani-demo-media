@@ -879,22 +879,22 @@
       "key": "video-loopscroll-1080p",
       "path": "video/loopscroll-1080p.mp4",
       "title": "Background video 1080p",
-      "sha1": "123befa5d653bc1fd981ce0c7a45199f94fb8fe9",
-      "bytes": 11482571
+      "sha1": "0f54cb8c8f7fbf19c59fa129fe84a10a4dbb577e",
+      "bytes": 11604453
     },
     {
       "key": "video-loopscroll-480p",
       "path": "video/loopscroll-480p.mp4",
       "title": "Background video 480p",
-      "sha1": "d4b193b2410b4ba22a877513647e635d8a5fd85f",
-      "bytes": 2549445
+      "sha1": "0487b48ae4965c43e8e6f8e7e6f7f65db7428977",
+      "bytes": 2588682
     },
     {
       "key": "video-loopscroll-720p",
       "path": "video/loopscroll-720p.mp4",
       "title": "Background video 720p",
-      "sha1": "7fdeb5344d48c236c47d4748ce748d9b2b20b42f",
-      "bytes": 5046867
+      "sha1": "deb3794a33203244c223d738d2442186384b8593",
+      "bytes": 4928577
     }
   ],
   "settings_map": {
