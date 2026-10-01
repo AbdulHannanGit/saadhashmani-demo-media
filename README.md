@@ -32,3 +32,19 @@ Media used by the [Saad Hashmani WordPress theme](https://github.com/AbdulHannan
 
 - **No Git LFS.** `raw.githubusercontent.com` serves LFS files as small pointer text, which the importer rejects. Keep each file under GitHub's 100 MB limit (the 1080p video is ~11 MB).
 - After adding or replacing a file, update its entry (path, `sha1`, `bytes`) and any `settings_map` lines in `manifest.json`.
+
+## Encoding the background video
+
+The theme seeks to the start of each clip (section loops and transitions). Seeking is instant only when a keyframe sits on that frame, so the videos are encoded with a keyframe forced at every clip boundary (snapped down to the 30 fps frame grid) plus one every 2 s, and without the silent audio track:
+
+```bash
+# clip boundaries for the default clip lengths (theme: Sections > Hero > Clip lengths)
+KF=0.0000,4.0323,9.0657,13.0990,18.1323,22.1990,27.2323,32.2323,37.2657,42.2657,47.2990,51.3323,56.3990,60.4323
+ffmpeg -i master-1080p.mp4 -an -vf scale=854:480:flags=lanczos \
+  -c:v libx264 -preset slow -profile:v high -pix_fmt yuv420p -crf 27 -maxrate 380k -bufsize 760k \
+  -g 60 -keyint_min 30 -sc_threshold 0 -force_key_frames "$KF" -movflags +faststart loopscroll-480p.mp4
+# 720p:  scale=1280:720  -crf 27 -maxrate 660k  -bufsize 1320k
+# 1080p: scale=1920:1080 -crf 25 -maxrate 1450k -bufsize 2900k
+```
+
+If the clip lengths change, recompute `KF` (each boundary = running sum of the lengths, floored to a whole frame, minus 1 ms) and update the setting.
